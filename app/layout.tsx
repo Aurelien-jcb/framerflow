@@ -1,10 +1,15 @@
+"use client"
+
 import "@/styles/globals.css"
+import { Fragment, useEffect, useState } from "react"
 import { Metadata } from "next"
+import { Transition } from "@headlessui/react"
 
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
-import { SiteHeader } from "@/components/site-header"
+import SideBar from "@/components/layout/side-bar"
+import { TopBar } from "@/components/layout/top-bar"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -30,10 +35,31 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
+  const [showNav, setShowNav] = useState(true)
+  const [isMobile, setIsMobile] = useState(false)
+
+  function handleResize() {
+    if (innerWidth <= 640) {
+      setShowNav(false)
+      setIsMobile(true)
+    } else {
+      setShowNav(true)
+      setIsMobile(false)
+    }
+  }
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      addEventListener("resize", handleResize)
+    }
+
+    return () => {
+      removeEventListener("resize", handleResize)
+    }
+  }, [])
   return (
     <>
       <html lang="en" suppressHydrationWarning>
-        <head />
         <body
           className={cn(
             "min-h-screen bg-background font-sans antialiased",
@@ -42,8 +68,26 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <div className="relative flex min-h-screen flex-col">
-              <SiteHeader />
-              <div className="flex-1">{children}</div>
+              <TopBar showNav={showNav} setShowNav={setShowNav} />
+              <Transition
+                as={Fragment}
+                show={showNav}
+                enter="transform transition duration-300"
+                enterFrom="-translate-x-full"
+                enterTo="translate-x-0"
+                leave="transform duration-300 transition ease-in-out"
+                leaveFrom="translate-x-0"
+                leaveTo="-translate-x-full"
+              >
+                <SideBar items={siteConfig.mainNav} showNav={showNav} />
+              </Transition>
+              <main
+                className={`pt-8 transition-all duration-300 ${
+                  showNav && !isMobile ? "pl-56" : ""
+                }`}
+              >
+                <div className="px-4 md:px-16">{children}</div>
+              </main>
             </div>
             <TailwindIndicator />
           </ThemeProvider>
