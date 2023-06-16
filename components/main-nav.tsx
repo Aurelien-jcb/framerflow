@@ -19,7 +19,7 @@ export function MainNav({ items }: MainNavProps) {
       </Link>
       {items?.length ? (
         <nav className="flex gap-6">
-          {items?.map(
+          {/* {items?.map(
             (item, index) =>
               item.href && (
                 <Link
@@ -33,7 +33,7 @@ export function MainNav({ items }: MainNavProps) {
                   {item.title}
                 </Link>
               )
-          )}
+          )} */}
         </nav>
       ) : null}
     </div>

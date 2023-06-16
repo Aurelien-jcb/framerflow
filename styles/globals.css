@@ -4,32 +4,50 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    /* BASE */
+    --beige: 32 79% 93%;
+    --cream: 43, 100%, 99%;
+    --green: 148 32% 72%;
+    --mineral: 147 17% 32%;
+    --dark: 147 21% 17%;
+
+    /* BEIGE */
+    --background: 32 79% 93%;
     --foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 40% 96.1%;
+    --muted: 43, 100%, 99%, 0.5;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --popover: 0 0% 100%;
+    /* BLANC FFFDF8 */
+    --popover: 43, 100%, 99%;
     --popover-foreground: 222.2 47.4% 11.2%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    /* VERT FONCE V2 7e9186 */
+    --border: 145 8% 53%;
+    --input: 145 8% 53%;
 
-    --card: 0 0% 100%;
+    --card: 43, 100%, 99%;
     --card-foreground: 222.2 47.4% 11.2%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* VERT FONCE 445F50 */
+    --primary: 147 17% 32%;
+    /* VERT FONCE V2 7e9186 */
+    --primary-foreground: 145 8% 53%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* BLANC FFFDF8 */
+    --secondary: 43, 100%, 99%;
+    /* BLANC fffefa */
+    --secondary-foreground: 43, 100%, 99%, 0.3;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* VERT CLAIR 9FCEB5 */
+    --accent: 148 32% 72%;
+    /* VERT FONCE */
+    --accent-foreground: 147 17% 32;
 
+    /* ROUGE ff0000 */
     --destructive: 0 100% 50%;
-    --destructive-foreground: 210 40% 98%;
+    /* ROUGE ff0000 */
+    --destructive-foreground: 0, 100%, 50%, 0.7;
 
     --ring: 215 20.2% 65.1%;
 
@@ -37,32 +55,43 @@
   }
 
   .dark {
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
+    /* VERT FONCE V3 22342a */
+    --background: 147 21% 17%;
+    /* VERT FONCE V2 7e9186 */
+    --foreground: 145 8% 53%;
 
-    --muted: 223 47% 11%;
+    --muted: 32, 79%, 93%, 0.5;
     --muted-foreground: 215.4 16.3% 56.9%;
 
-    --accent: 216 34% 17%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 32 79% 93%;
+    --accent-foreground: 147 17% 32;
 
-    --popover: 224 71% 4%;
+    /* VERT FONCE 445F50 */
+    --popover: 147 17% 32%;
     --popover-foreground: 215 20.2% 65.1%;
 
-    --border: 216 34% 17%;
-    --input: 216 34% 17%;
+    /* BLANC FFFDF8 */
+    --border: 43, 100%, 99%;
+    --input: 43, 100%, 99%;
 
-    --card: 224 71% 4%;
+    /* VERT FONCE 445F50 */
+    --card: 147 17% 32%;
     --card-foreground: 213 31% 91%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 1.2%;
+    /* BEIGE FBEDDD */
+    --primary: 32 79% 93%;
+    /* BEIGE 80% */
+    --primary-foreground: 32, 79%, 93%, 0.8;
 
-    --secondary: 222.2 47.4% 11.2%;
-    --secondary-foreground: 210 40% 98%;
+    /* VERT FONCE 445F50 */
+    --secondary: 147 17% 32%;
+    /* VERT FONCE V2 7e9186 */
+    --secondary-foreground: 145 8% 53%;
 
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    /* ROUGE ff0000 */
+    --destructive: 0 100% 50%;
+    /* ROUGE ff0000 */
+    --destructive-foreground: 0, 100%, 50%, 0.9;
 
     --ring: 216 34% 17%;
 
@@ -71,11 +100,11 @@
 }
 
 @layer base {
-  * {
+  /* * {
     @apply border-border;
-  }
+  } */
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-primary;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
