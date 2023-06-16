@@ -35,8 +35,8 @@ export const NotificationButton = () => {
             </div>
             <div className="mt-4 grid grid-cols-1 gap-4 overflow-hidden">
               <div className="flex">
-                <div className="bg-green-200 flex h-8 w-8 shrink-0 items-center justify-center rounded-full">
-                  <Icons.checkIcon  className="text-green-600 h-4 w-4" />
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-green-200">
+                  <Icons.checkIcon  className="h-4 w-4 text-green-600" />
                 </div>
                 <div className="ml-4">
                   <p className="font-medium ">Titre de la notification</p>
@@ -46,8 +46,8 @@ export const NotificationButton = () => {
                 </div>
               </div>
               <div className="flex">
-                <div className="bg-green-200 flex h-8 w-8 shrink-0 items-center justify-center rounded-full">
-                  <Icons.checkIcon  className="text-green-600 h-4 w-4" />
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-green-200">
+                  <Icons.checkIcon  className="h-4 w-4 text-green-600" />
                 </div>
                 <div className="ml-4">
                   <p className="font-medium ">Titre de la notification</p>
@@ -57,8 +57,8 @@ export const NotificationButton = () => {
                 </div>
               </div>
               <div className="flex">
-                <div className="bg-green-200 flex h-8 w-8 shrink-0 items-center justify-center rounded-full">
-                  <Icons.checkIcon  className="text-green-600 h-4 w-4" />
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-green-200">
+                  <Icons.checkIcon  className="h-4 w-4 text-green-600" />
                 </div>
                 <div className="ml-4">
                   <p className="font-medium ">Titre de la notification</p>
@@ -68,8 +68,8 @@ export const NotificationButton = () => {
                 </div>
               </div>
               <div className="flex">
-                <div className="bg-green-200 flex h-8 w-8 shrink-0 items-center justify-center rounded-full">
-                  <Icons.checkIcon  className="text-green-600 h-4 w-4" />
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-green-200">
+                  <Icons.checkIcon  className="h-4 w-4 text-green-600" />
                 </div>
                 <div className="ml-4">
                   <p className="font-medium ">Titre de la notification</p>
